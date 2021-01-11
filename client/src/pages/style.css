@@ -1,0 +1,19 @@
+.larger-spacing {
+    letter-spacing: 0.5rem;
+}
+
+.small-spacing {
+    letter-spacing: 0.1rem;
+}
+
+.larger-text {
+    font-size: 3.0rem;
+}
+
+.squeezed {
+    transform: scale(1, 0.85);
+}
+
+.font-light {
+    font-weight: 100 !important;
+}
