@@ -1,21 +1,32 @@
 import { useState, useRef } from "react";
 import Container from "../Container";
+import SearchResults from "../SearchResults";
 
-const SearchBar = () => {
+//Include API functions 
+import APIService from "../../Services/APIService";
+
+const Search = () => {
     //Keep track of books to search for.
     const [searchTerms, setSearchTerms] = useState({text: ""});
+
+    //Keep track of results.
+    const [searchResults, setSearchResults] = useState([]);
 
     //Reference the input field.
     const searchInput = useRef();
 
     const handleSubmit = event => {
         event.preventDefault();
-        console.log(searchTerms);
+        console.log(searchTerms.text);
 
-
-
-        //At end
-        resetForm();
+        APIService.searchBooks(searchTerms.text)
+            .then(result => {
+                console.log(result.data.items);
+                setSearchResults(result.data.items);
+                console.log(searchResults);
+                //At end
+                resetForm();
+            });
     };
 
     const onChange = event => {
@@ -40,8 +51,9 @@ const SearchBar = () => {
                     </div>
                 </div>
             </form>
+            {searchResults ? <SearchResults data={searchResults}/> : null}
         </Container>
     );
 }
 
-export default SearchBar;
+export default Search;
