@@ -5,6 +5,7 @@ import { AuthContext } from "../Context/AuthContext";
 //Import Components
 import Container from "../components/Container";
 import Message from "../components/Message";
+import Header from "../components/Header";
 
 const Login = (props) => {
     //Initialize user state.
@@ -70,6 +71,7 @@ const Login = (props) => {
 
     return (
         <>
+        <Header/>
         <Container>
             <form className="mt-5" onSubmit={handleSubmit}>
                 <h3 className="text-center my-4 font-light larger-spacing squeezed">SIGN IN</h3>

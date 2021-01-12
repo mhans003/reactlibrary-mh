@@ -1,7 +1,10 @@
+import Header from "../components/Header";
 
 const Home = () => {
     return (
-        <div>HOME PLACEHOLDER</div>
+        <>
+            <Header/>
+        </>
     );
 };
 

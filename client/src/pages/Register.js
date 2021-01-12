@@ -5,6 +5,7 @@ import { AuthContext } from "../Context/AuthContext";
 //Import Components
 import Container from "../components/Container";
 import Message from "../components/Message";
+import Header from "../components/Header";
 
 const Register = (props) => {
     //Initialize user state.
@@ -68,6 +69,7 @@ const Register = (props) => {
 
     return (
         <>
+        <Header/>
         <Container>
             <form className="mt-5" onSubmit={handleSubmit}>
                 <h3 className="text-center my-4 font-light larger-spacing squeezed">REGISTER</h3>
