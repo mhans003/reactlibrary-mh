@@ -1,6 +1,7 @@
 import { useState, useRef } from "react";
 import Container from "../Container";
 import SearchResults from "../SearchResults";
+import Message from "../Message";
 
 //Include API functions 
 import APIService from "../../Services/APIService";
@@ -8,6 +9,9 @@ import APIService from "../../Services/APIService";
 const Search = () => {
     //Keep track of books to search for.
     const [searchTerms, setSearchTerms] = useState({text: ""});
+
+    //Initialize message state.
+    const [message, setMessage] = useState(null);
 
     //Keep track of results.
     const [searchResults, setSearchResults] = useState([]);
@@ -26,6 +30,13 @@ const Search = () => {
                 console.log(searchResults);
                 //At end
                 resetForm();
+            })
+            .catch(error => {
+                console.log(error);
+                setMessage({
+                    msgBody: "Something went wrong",
+                    msgError: true
+                });
             });
     };
 
@@ -51,6 +62,7 @@ const Search = () => {
                     </div>
                 </div>
             </form>
+            {message ? <Message message={message}/> : null}
             {searchResults ? <SearchResults data={searchResults}/> : null}
         </Container>
     );
