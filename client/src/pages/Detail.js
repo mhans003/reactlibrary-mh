@@ -1,13 +1,13 @@
 import Header from "../components/Header";
 import LargeHeading from "../components/LargeHeading";
 
-const Home = () => {
+const Detail = () => {
     return (
         <>
             <Header/>
-            <LargeHeading text={"SEARCH BOOKS"}/>
+            <LargeHeading text={"MY BOOKS"}/>
         </>
     );
-};
+}
 
-export default Home;
+export default Detail; 

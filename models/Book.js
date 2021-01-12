@@ -20,6 +20,9 @@ const BookSchema = new Schema({
     },
     link: {
         type: String
+    },
+    read: {
+        type: Boolean
     }
 })
 
