@@ -23,6 +23,9 @@ const BookSchema = new Schema({
     },
     read: {
         type: Boolean
+    },
+    apiID: {
+        type: String
     }
 })
 

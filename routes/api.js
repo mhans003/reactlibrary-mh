@@ -28,5 +28,50 @@ apiRouter.get("/search/:searchTerms", (request, response) => {
     });
 });
 
+apiRouter.post("/books", passport.authenticate("jwt", {session: false}), (request, response) => {
+    console.log(request.body);
+    console.log(request.user);
+    
+    const book = new Book({...request.body});
+
+    book.save(error => {
+        if(error) {
+            response.status(500).json(
+                {
+                    message: {
+                        msgBody: "An error occured", 
+                        msgError: true
+                    }
+                }
+            );
+        } else {
+            request.user.books.push(book);
+            request.user.save(error => {
+                if(error) {
+                    response.status(500).json(
+                        {
+                            message: {
+                                msgBody: "An error occured", 
+                                msgError: true
+                            }
+                        }
+                    );
+                } else {
+                    //Confirm that the new aspiration was created and pushed to the user.
+                    response.status(200).json(
+                        {
+                            message: {
+                                msgBody: `Created new aspiration for user ${request.user.username}.`,
+                                msgError: false
+                            }
+                        }
+                    );
+                }
+            });
+        }
+    })
+    
+});
+
 
 module.exports = apiRouter;

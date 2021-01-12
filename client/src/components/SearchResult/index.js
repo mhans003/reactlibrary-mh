@@ -1,12 +1,73 @@
 import ContainerFluid from "../ContainerFluid";
+import Container from "../Container";
 import Row from "../Row";
 import Col from "../Col";
 
+//Include API functions.
+import APIService from "../../Services/APIService";
+
 const SearchResult = (props) => {
+
+    const handleFavoriteSave = event => {
+        const newBook = {
+            title: props.result.volumeInfo.title,
+            authors: props.result.volumeInfo.authors,
+            description: props.result.volumeInfo.description,
+            image: props.result.volumeInfo.imageLinks.thumbnail,
+            thumbnail: props.result.volumeInfo.imageLinks.smallThumbnail,
+            link: props.result.volumeInfo.infoLink,
+            read: false,
+            apiID: props.result.id
+        }
+
+        APIService.saveBook(newBook).then(data => {
+            console.log(data);
+        })
+        .catch(error => {
+            if(error) {
+                console.log("not authenticated");
+                console.log("Error. Not authorized. Save to global state");
+            }
+        });
+
+        /*
+        title: {
+            type: String
+        },
+        authors: {
+            type: Array
+        },
+        description: {
+            type: String
+        },
+        image: {
+            type: String
+        },
+        thumbnail: {
+            type: String
+        },
+        link: {
+            type: String
+        },
+        read: {
+            type: Boolean
+        },
+        apiID: {
+            type: String
+        }
+        */
+    };
+
+    const handleFavoriteRemove = event => {
+
+    };
+
     return (
         <div className="card mx-3 my-2">
             <div className="card-header">
-                <h3 className="small-spacing font-light">{props.result.volumeInfo.title}</h3>
+                <h3 className="small-spacing font-light">
+                    {props.result.volumeInfo.title} <button className="btn btn-secondary fas fa-check mx-auto" onClick={() => handleFavoriteSave()}></button>
+                </h3>
                 <h6 className="small-spacing">
                     {props.result.volumeInfo.authors ? props.result.volumeInfo.authors.map((author, index) => {
                         return (
@@ -15,7 +76,7 @@ const SearchResult = (props) => {
                         </span>
                         )
                     }) : null}
-                </h6>
+                </h6> 
             </div>
             <div className="card-body">
                 <ContainerFluid>
