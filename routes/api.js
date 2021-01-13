@@ -95,9 +95,20 @@ apiRouter.post("/books", passport.authenticate("jwt", {session: false}), (reques
                 }
             });
         }
-    })
-    
+    });
 });
 
+apiRouter.delete("/books/:id", passport.authenticate("jwt", {session: false}), (request, response) => {
+    console.log("in delete route");
+    Book.remove(
+        {_id: request.params.id}
+    ).then(result => {
+        console.log(result);
+        response.json(result);
+    }).catch(error => {
+        response.json(error);
+        console.log(error);
+    });
+});
 
 module.exports = apiRouter;

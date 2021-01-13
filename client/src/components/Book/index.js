@@ -9,6 +9,9 @@ const Book = (props) => {
             <BookCardHeader
                 title={props.bookData.title}
                 authors={props.bookData.authors}
+                handleRemove={true}
+                id={props.bookData._id}
+                retrieveBooks={props.retrieveBooks}
             />
             <BookCardBody
                 image={props.bookData.image}

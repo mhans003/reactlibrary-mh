@@ -12,5 +12,9 @@ export default {
     //Get all books from the database.
     getBooks: () => {
         return axios.get(`/api/books`);
+    },
+    //Delete one book from the database.
+    deleteBook: (id) => {
+        return axios.delete(`/api/books/${id}`);
     }
 }

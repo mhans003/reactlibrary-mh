@@ -1,4 +1,14 @@
+import ConfirmDeleteModal from "../ConfirmDeleteModal";
+import { useState } from "react";
+
 const BookCardHeader = (props) => {
+    //Set state for delete modal.
+    const [deleteBookShow, setDeleteBookShow] = useState(false);
+
+    //Modal handlers
+    const handleDeleteBookClose = () => setDeleteBookShow(false);
+    const handleDeleteBookShow = () => setDeleteBookShow(true);
+
     return (
         <div className="card-header">
             <h3 className="small-spacing font-light">
@@ -15,7 +25,7 @@ const BookCardHeader = (props) => {
                     props.handleRemove ? 
                     <button 
                         className="btn btn-danger fas fa-trash mx-auto"
-                        onClick={() => props.handleRemove()}>
+                        onClick={() => handleDeleteBookShow()}>
                     </button> 
                     : null
                 }
@@ -29,6 +39,13 @@ const BookCardHeader = (props) => {
                     )
                 }) : null}
             </h6> 
+            <ConfirmDeleteModal
+                title={props.title}
+                id={props.id}
+                deleteBookShow={deleteBookShow}
+                handleDeleteBookClose={handleDeleteBookClose}
+                retrieveBooks={props.retrieveBooks}
+            />
         </div>
     )
 }

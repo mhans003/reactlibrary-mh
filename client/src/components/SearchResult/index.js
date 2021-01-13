@@ -49,7 +49,7 @@ const SearchResult = (props) => {
                 handleSave={handleFavoriteSave}
             />
             <BookCardBody
-                image={props.result.volumeInfo.imageLinks.thumbnail}
+                image={props.result.volumeInfo.imageLinks ? props.result.volumeInfo.imageLinks.thumbnail : null}
                 categories={props.result.volumeInfo.categories}
                 description={props.result.volumeInfo.description}
             />

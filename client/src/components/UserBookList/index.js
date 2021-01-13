@@ -6,7 +6,7 @@ const UserBookList = (props) => {
             <>
             {
                 props.books.map(book => {
-                    return <Book bookData={book}/>
+                    return <Book bookData={book} retrieveBooks={props.retrieveBooks}/>
                 })
             }
             </>

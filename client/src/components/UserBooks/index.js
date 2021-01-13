@@ -13,7 +13,7 @@ const UserBooks = () => {
     //Retrieve and save the books for this user.
     const [userBooks, setUserBooks] = useState([]);
 
-    useEffect(() => {
+    const retrieveBooks = () => {
         APIService.getBooks().then(result => {
             console.log(result.data.books);
             setUserBooks(result.data.books);
@@ -26,6 +26,10 @@ const UserBooks = () => {
                 msgError: true
             });
         });
+    };
+
+    useEffect(() => {
+        retrieveBooks();
     }, []);
     //Create a state object that holds the books currently saved by this user (API IDs)
     //Using THESE objects (not the API results), render BookList with BookItem components
@@ -40,7 +44,7 @@ const UserBooks = () => {
         <Container>  
             {message ? <Message message={message}/> : null}
             {
-                userBooks ? <UserBookList books={userBooks}/> : 
+                userBooks ? <UserBookList books={userBooks} retrieveBooks={retrieveBooks}/> : 
                 <h4 className="text-center font-light larger-spacing">NO BOOKS YET</h4>
             }
         </Container>
