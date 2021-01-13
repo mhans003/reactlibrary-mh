@@ -59,8 +59,8 @@ const Login = (props) => {
                 setDisabled(true);
 
                 timerID = setTimeout(() => {
-                    props.history.push("/");
-                }, 2000);
+                    props.history.push("/user");
+                }, 10);
             } else {
                 //Otherise, set an error message.
                 setMessage(message);

@@ -14,7 +14,7 @@ const BookCardBody = (props) => {
                         <h6 className="small-spacing">
                             {props.categories ? props.categories.map((category, index) => {
                                 return (
-                                    <span className="font-light">
+                                    <span className="font-light" key={index}>
                                         <i>{category}{index === props.categories.length - 1 ? "" : ", "}</i>
                                     </span>
                                 )

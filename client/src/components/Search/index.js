@@ -1,10 +1,13 @@
-import { useState, useRef } from "react";
+import { useState, useContext, useRef } from "react";
 import Container from "../Container";
 import SearchResults from "../SearchResults";
 import Message from "../Message";
 
 //Include API functions 
 import APIService from "../../Services/APIService";
+
+//Include Global Book IDs
+import { BookContext } from "../../Context/BookContext";
 
 const Search = () => {
     //Keep track of books to search for.
@@ -18,6 +21,10 @@ const Search = () => {
 
     //Reference the input field.
     const searchInput = useRef();
+
+    //Include Global Book IDs
+    const bookContext = useContext(BookContext);
+    console.log(bookContext.bookIds);
 
     const handleSubmit = event => {
         event.preventDefault();

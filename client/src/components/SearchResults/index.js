@@ -5,8 +5,8 @@ const SearchResults = (props) => {
         return (
             <>
             {
-                props.data.map(result => {
-                    return <SearchResult result={result}/>
+                props.data.map((result, index) => {
+                    return <SearchResult result={result} key={index}/>
                 })
             }
             </>

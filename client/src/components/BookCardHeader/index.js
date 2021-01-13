@@ -33,7 +33,7 @@ const BookCardHeader = (props) => {
             <h6 className="small-spacing">
                 {props.authors ? props.authors.map((author, index) => {
                     return (
-                        <span className="font-light">
+                        <span className="font-light" key={index}>
                             <i>{author}{index === props.authors.length - 1 ? "" : ", "}</i>
                         </span>
                     )

@@ -1,7 +1,9 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import Container from "../Container";
 import Message from "../Message";
 import UserBookList from "../UserBookList";
+
+import { BookContext } from "../../Context/BookContext";
 
 //Include API functions.
 import APIService from "../../Services/APIService";
@@ -13,11 +15,14 @@ const UserBooks = () => {
     //Retrieve and save the books for this user.
     const [userBooks, setUserBooks] = useState([]);
 
+    //Include Global Book IDs
+    const bookContext = useContext(BookContext);
+
     const retrieveBooks = () => {
         APIService.getBooks().then(result => {
             console.log(result.data.books);
             setUserBooks(result.data.books);
-            console.log(userBooks);
+            console.log(userBooks);   
         })
         .catch(error => {
             console.log(error);
@@ -31,14 +36,6 @@ const UserBooks = () => {
     useEffect(() => {
         retrieveBooks();
     }, []);
-    //Create a state object that holds the books currently saved by this user (API IDs)
-    //Using THESE objects (not the API results), render BookList with BookItem components
-    //Each of these BookItems will have a button to handle the delete 
-
-    //useEffect gets all the books saved from the DB and stores them in the state holding the books
-    //Each time books is updated, the books are re-rendered
-
-    //Make sure that the ID for the book (API ID) is removed from the user's books array on the server-side.
 
     return (
         <Container>  
