@@ -29,37 +29,16 @@ const SearchResult = (props) => {
                 console.log("Error. Not authorized. Save to global state");
             }
         });
-
-        /*
-        title: {
-            type: String
-        },
-        authors: {
-            type: Array
-        },
-        description: {
-            type: String
-        },
-        image: {
-            type: String
-        },
-        thumbnail: {
-            type: String
-        },
-        link: {
-            type: String
-        },
-        read: {
-            type: Boolean
-        },
-        apiID: {
-            type: String
-        }
-        */
     };
 
     const handleFavoriteRemove = event => {
-
+        APIService.deleteBook(props.result.id).then(data => {
+            //After boks are deleted, makes sure that global state is update to reflect updates.
+        })
+        .catch(error => {
+            //Deal with error and create message object below.
+            console.log(error);
+        });
     };
 
     return (

@@ -28,6 +28,32 @@ apiRouter.get("/search/:searchTerms", (request, response) => {
     });
 });
 
+apiRouter.get("/books", passport.authenticate("jwt", {session: false}), (request, response) => {
+    //Find the user logged in, and populate that user's books array.
+    User.findById({_id: request.user._id})
+        .populate("books")
+        .exec((error, document) => {
+            if(error) {
+                response.status(500).json(
+                    {
+                        message: {
+                            msgBody: "An error occured", 
+                            msgError: true
+                        }
+                    }
+                );
+            } else {
+                //The books array will be populated using the returned document.
+                response.status(200).json(
+                    {
+                        books: document.books, 
+                        authenticated: true
+                    }
+                );
+            }
+        });
+});
+
 apiRouter.post("/books", passport.authenticate("jwt", {session: false}), (request, response) => {
     console.log(request.body);
     console.log(request.user);
