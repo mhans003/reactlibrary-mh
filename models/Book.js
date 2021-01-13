@@ -26,6 +26,9 @@ const BookSchema = new Schema({
     },
     apiID: {
         type: String
+    },
+    categories: {
+        type: Array
     }
 })
 

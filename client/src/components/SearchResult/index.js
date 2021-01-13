@@ -17,7 +17,8 @@ const SearchResult = (props) => {
             thumbnail: props.result.volumeInfo.imageLinks.smallThumbnail,
             link: props.result.volumeInfo.infoLink,
             read: false,
-            apiID: props.result.id
+            apiID: props.result.id,
+            categories: props.result.volumeInfo.categories
         }
 
         APIService.saveBook(newBook).then(data => {
