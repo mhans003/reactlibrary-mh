@@ -25,18 +25,18 @@ const Header = (props) => {
     const authenticatedNavbar = () => {
         return (
             <>
+                <NavItem text={`Welcome, ${isAuthenticated ? user.username : "GuestUser"}`} tagName={"user"} current={props.current}/>
                 <LogoutButton/>
             </>
         );
     };
 
     return (
-        <Navbar className="navbar-light bg-light p-5" expand="lg">
+        <Navbar className="navbar-light bg-light p-5" expand="md">
             <Navbar.Brand href="/"><span className="larger-spacing larger-text font-light">REACT LIBRARY</span></Navbar.Brand>
             <Navbar.Toggle aria-controls="basic-navbar-nav"/>
             <Navbar.Collapse id="basic-navbar-nav">
                 <Nav className="ml-auto">
-                    <NavItem text={`Welcome, ${isAuthenticated ? user.username : "GuestUser"}`} tagName={"user"} current={props.current}/>
                     { !isAuthenticated ? unauthenticatedNabar() : authenticatedNavbar() }
                 </Nav>
             </Navbar.Collapse>

@@ -49,8 +49,7 @@ const Login = (props) => {
                 //Update global context with user information.
                 authContext.setUser(user);
                 authContext.setIsAuthenticated(isAuthenticated);
-                //Once authenticated, redirect to aspirations for current user.
-
+                //Once authenticated, redirect to books for current user.
                 setMessage({
                     msgBody: "Success! Logging in...",
                     msgError: false

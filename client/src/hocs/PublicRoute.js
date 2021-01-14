@@ -10,7 +10,7 @@ const PublicRoute = ({component: Component, ...rest}) => {
             //If user is not authenticated, redirect to the login page (from this location).
             if(isAuthenticated) {
                 return <Redirect to={{ 
-                    pathname: "/", 
+                    pathname: "/search", 
                     state: {from: props.location}
                 }}/>
             }
