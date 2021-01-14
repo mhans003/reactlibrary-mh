@@ -34,6 +34,7 @@ const SearchResult = (props) => {
         .catch(error => {
             console.log(error);
             if(error) {
+                handleAddErrorShow();
                 console.log("not authenticated");
                 console.log("Error. Not authorized. Save to global state");
             }
