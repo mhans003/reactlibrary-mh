@@ -1,11 +1,16 @@
+import { useState } from "react";
+
 import BookCard from "../BookCard";
 import BookCardBody from "../BookCardBody";
 import BookCardHeader from "../BookCardHeader";
+import ConfirmAddModal from "../ConfirmAddModal";
 
 //Include API functions.
 import APIService from "../../Services/APIService";
 
 const SearchResult = (props) => {
+
+    const [addBookShow, setAddBookShow] = useState(false);
 
     const handleFavoriteSave = event => {
         const newBook = {
@@ -22,6 +27,7 @@ const SearchResult = (props) => {
 
         APIService.saveBook(newBook).then(data => {
             console.log(data);
+            handleAddBookShow();
         })
         .catch(error => {
             if(error) {
@@ -41,19 +47,30 @@ const SearchResult = (props) => {
         });
     };
 
+    //Modal handlers
+    const handleAddBookClose = () => setAddBookShow(false);
+    const handleAddBookShow = () => setAddBookShow(true);
+
     return (
-        <BookCard>
-            <BookCardHeader
+        <>
+            <BookCard>
+                <BookCardHeader
+                    title={props.result.volumeInfo.title}
+                    authors={props.result.volumeInfo.authors}
+                    handleSave={handleFavoriteSave}
+                />
+                <BookCardBody
+                    image={props.result.volumeInfo.imageLinks ? props.result.volumeInfo.imageLinks.thumbnail : null}
+                    categories={props.result.volumeInfo.categories}
+                    description={props.result.volumeInfo.description}
+                />
+            </BookCard>
+            <ConfirmAddModal
                 title={props.result.volumeInfo.title}
-                authors={props.result.volumeInfo.authors}
-                handleSave={handleFavoriteSave}
+                addBookShow={addBookShow}
+                handleAddBookClose={handleAddBookClose}
             />
-            <BookCardBody
-                image={props.result.volumeInfo.imageLinks ? props.result.volumeInfo.imageLinks.thumbnail : null}
-                categories={props.result.volumeInfo.categories}
-                description={props.result.volumeInfo.description}
-            />
-        </BookCard>
+        </>
     );
 }
 
