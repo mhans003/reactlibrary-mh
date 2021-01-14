@@ -16,7 +16,7 @@ const BookCardHeader = (props) => {
                 {
                     props.handleSave ? 
                     <button 
-                        className="btn btn-secondary fas fa-check mx-auto"
+                        className="btn btn-outline-info fas fa-plus ml-2"
                         onClick={() => props.handleSave()}>
                     </button> 
                     : null
@@ -24,7 +24,7 @@ const BookCardHeader = (props) => {
                 {
                     props.handleRemove ? 
                     <button 
-                        className="btn btn-danger fas fa-trash mx-auto"
+                        className="btn btn-secondary fas fa-times ml-2"
                         onClick={() => handleDeleteBookShow()}>
                     </button> 
                     : null
