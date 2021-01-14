@@ -59,7 +59,7 @@ const Login = (props) => {
 
                 timerID = setTimeout(() => {
                     props.history.push("/user");
-                }, 10);
+                }, 2000);
             } else {
                 //Otherise, set an error message.
                 setMessage(message);
@@ -68,12 +68,17 @@ const Login = (props) => {
         });
     };
 
+    const handleSignInredirect = (event) => {
+        event.preventDefault();
+        props.history.push("/register");
+    };
+
     return (
         <>
         <Header/>
         <Container>
             <form className="mt-5" onSubmit={handleSubmit}>
-                <h3 className="text-center my-4 font-light larger-spacing squeezed">SIGN IN</h3>
+                <h1 className="text-center my-4 font-light larger-spacing">Sign In</h1>
                 <hr className="my-4"/>
                 <div className="form-group">
                     <input type="text" name="username" onChange={handleChange} className="form-control form-control-lg" placeholder="Username" aria-label="Enter Username" disabled={disabled} required/>
@@ -81,8 +86,13 @@ const Login = (props) => {
                 <div className="form-group">
                     <input type="password" name="password" onChange={handleChange} className="form-control form-control-lg" placeholder="Password" aria-label="Enter Password" disabled={disabled} required/>
                 </div>
-                <button className="btn btn-lg btn-primary btn-block" type="submit" disabled={disabled}>
-                    LOG IN
+                <button className="btn btn-lg btn-primary btn-block font-medium" type="submit" disabled={disabled}>
+                    Log In <i className="fad fa-sign-in-alt ml-1"></i>
+                </button>
+            </form>
+            <form className="mt-2" onSubmit={handleSignInredirect}>
+                <button className="btn btn-lg btn-outline-info btn-block font-medium small-spacing" type="submit" disabled={disabled}>
+                    Create New Account
                 </button>
             </form>
             {message ? <Message message={message}/> : null}

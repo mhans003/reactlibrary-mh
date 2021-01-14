@@ -1,5 +1,19 @@
+.hr-light {
+    border: 0;
+    height: 1px;
+    background-image: linear-gradient(to right, rgba(100,100,100,0), rgba(100,100,100,0.75), rgba(100,100,100,0));
+}
+
+.main-icon {
+    color: rgba(50, 150, 180, 1.0);
+}
+
 .larger-spacing {
-    letter-spacing: 0.5rem;
+    letter-spacing: 0.4rem;
+}
+
+.medium-spacing {
+    letter-spacing: 0.2rem;
 }
 
 .small-spacing {
@@ -16,4 +30,69 @@
 
 .font-light {
     font-weight: 100 !important;
+}
+
+.font-medium {
+    font-weight: 200 !important;
+}
+
+.btn-primary {
+    background-color: rgba(66, 199, 245, 1.0);
+    border: 1px solid rgba(66, 199, 245, 1.0);
+}
+
+.btn-primary:hover, .btn-primary:focus, .btn-primary:active {
+    color: rgba(66, 199, 245, 1.0);
+    background-color: #fff;
+    border: 1px solid rgba(66, 199, 245, 1.0);
+    font-weight: 300 !important;
+}
+
+.btn-outline-info {
+    color: rgba(50, 150, 180, 1.0);
+    border: 1px solid rgba(50, 150, 180, 1.0);
+    background-color: #fff;
+}
+
+.btn-outline-info:hover, .btn-outline-info:active, .btn-outline-info:focus {
+    background-color: rgba(50, 150, 180, 1.0);
+    border: 1px solid rgba(50, 150, 180, 1.0);
+    color: #fff;
+}
+
+.button-xl {
+    font-size: 1.6rem;
+}
+
+/*Animations*/
+
+.fade-in-text {
+    opacity: 1.0;
+    animation: fadeIn ease 2.5s;
+    -webkit-animation: fadeIn ease 2.5s;
+}
+    
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+@-moz-keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+@-webkit-keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+@-o-keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+@-ms-keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
 }

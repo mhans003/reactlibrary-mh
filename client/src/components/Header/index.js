@@ -33,7 +33,7 @@ const Header = (props) => {
 
     return (
         <Navbar className="navbar-light bg-light p-5" expand="md">
-            <Navbar.Brand href="/"><span className="larger-spacing larger-text font-light">REACT LIBRARY</span></Navbar.Brand>
+            <Navbar.Brand href="/"><span className="larger-spacing larger-text font-light">REACT LIBRARY<i className="fad fa-books main-icon"></i></span></Navbar.Brand>
             <Navbar.Toggle aria-controls="basic-navbar-nav"/>
             <Navbar.Collapse id="basic-navbar-nav">
                 <Nav className="ml-auto">
