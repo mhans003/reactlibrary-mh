@@ -41,7 +41,7 @@ const UserBooks = () => {
         <Container>  
             {message ? <Message message={message}/> : null}
             {
-                userBooks ? <UserBookList books={userBooks} retrieveBooks={retrieveBooks}/> : 
+                userBooks.length > 0 ? <UserBookList books={userBooks} retrieveBooks={retrieveBooks}/> : 
                 <h4 className="text-center font-light larger-spacing">NO BOOKS YET</h4>
             }
         </Container>
