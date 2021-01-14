@@ -59,7 +59,7 @@ const Home = (props) => {
     return (
         <>
             <Header/>
-            <h1 className="font-light text-center my-5 fade-in-text">Search and save books of interest</h1>
+            <h1 className="font-light text-center my-5 mx-1 fade-in-text">Search and save books of interest</h1>
             <form className="mt-5 text-center" onSubmit={handleGuestLogin}>
                 <button className="btn btn-lg button-xl btn-outline-info font-medium small-spacing" type="submit" disabled={disabled}>
                     Continue as Guest
@@ -73,12 +73,13 @@ const Home = (props) => {
                     <button className="btn-lg btn-primary font-medium medium-spacing">Sign In</button>
                 </Link>
             </div>
-            <div className="text-center">
-            <h2 className="font-light text-center">Create Account</h2>
+            <div className="text-center mb-5">
+                <h2 className="font-light text-center">Create Account</h2>
                 <Link to={"register"}>
                     <button className="btn-lg btn-primary font-medium medium-spacing">Register</button>
                 </Link>
             </div>
+            <hr className="hr-light mb-5"/>
         </>
     );
 };

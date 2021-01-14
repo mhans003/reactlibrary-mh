@@ -7,11 +7,13 @@ const BookCardBody = (props) => {
         <div className="card-body">
             <ContainerFluid>
                 <Row>
-                    <Col size={"col-3"}>
-                        <img src={props.image ? `${props.image}` : null} alt="Photo"/>
+                    <Col size={"col-md-3"}>
+                        <div className="mx-auto text-center">
+                            <img src={props.image ? `${props.image}` : null} alt="Photo"/>
+                        </div>
                     </Col>
-                    <Col size={"col-9"}>
-                        <h6 className="small-spacing">
+                    <Col size={"col-md-9"}>
+                        <h6 className="small-spacing mt-3 mt-md-0">
                             {props.categories ? props.categories.map((category, index) => {
                                 return (
                                     <span className="font-light" key={index}>

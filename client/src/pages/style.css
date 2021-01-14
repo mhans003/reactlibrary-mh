@@ -96,3 +96,43 @@
     0% { opacity: 0; }
     100% { opacity: 1; }
 }
+
+/*Media Queries*/
+
+@media screen and (max-width: 623px) {
+
+    .navbar-brand {
+        margin-left: auto !important; 
+        margin-right: auto !important; 
+        padding-left: auto !important; 
+        padding-right: auto !important; 
+    }
+
+    .navbar-brand span {
+        font-size: 2.0rem !important;
+    }
+
+    .navbar-toggler {
+        width: 97%; 
+        margin-left: auto !important; 
+        margin-right: auto !important; 
+        margin-bottom: 5px; 
+    }
+
+}
+
+@media screen and (max-width: 410px) {
+    .navbar-brand span {
+        font-size: 1.5rem !important;
+    }
+}
+
+@media screen and (max-width: 320px) {
+    .navbar-brand span {
+        font-size: 1.1rem !important;
+    }
+
+    .main-icon {
+        display: none;
+    }
+}
