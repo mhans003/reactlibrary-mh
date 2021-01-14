@@ -4,6 +4,7 @@ import BookCard from "../BookCard";
 import BookCardBody from "../BookCardBody";
 import BookCardHeader from "../BookCardHeader";
 import ConfirmAddModal from "../ConfirmAddModal";
+import AddErrorModal from "../AddErrorModal";
 
 //Include API functions.
 import APIService from "../../Services/APIService";
@@ -11,18 +12,19 @@ import APIService from "../../Services/APIService";
 const SearchResult = (props) => {
 
     const [addBookShow, setAddBookShow] = useState(false);
+    const [addErrorShow, setAddErrorShow] = useState(false);
 
     const handleFavoriteSave = event => {
         const newBook = {
-            title: props.result.volumeInfo.title,
-            authors: props.result.volumeInfo.authors,
-            description: props.result.volumeInfo.description,
-            image: props.result.volumeInfo.imageLinks.thumbnail,
-            thumbnail: props.result.volumeInfo.imageLinks.smallThumbnail,
-            link: props.result.volumeInfo.infoLink,
+            title: props.result.volumeInfo.title ? props.result.volumeInfo.title : null,
+            authors: props.result.volumeInfo.authors ? props.result.volumeInfo.authors: null,
+            description: props.result.volumeInfo.description ? props.result.volumeInfo.description : null,
+            image: props.result.volumeInfo.imageLinks ? props.result.volumeInfo.imageLinks.thumbnail : null,
+            thumbnail: props.result.volumeInfo.imageLinks ? props.result.volumeInfo.imageLinks.smallThumbnail : null,
+            link: props.result.volumeInfo.infoLink ? props.result.volumeInfo.infoLink : null,
             read: false,
             apiID: props.result.id,
-            categories: props.result.volumeInfo.categories
+            categories: props.result.volumeInfo.categories ? props.result.volumeInfo.categories : null
         }
 
         APIService.saveBook(newBook).then(data => {
@@ -30,6 +32,7 @@ const SearchResult = (props) => {
             handleAddBookShow();
         })
         .catch(error => {
+            console.log(error);
             if(error) {
                 console.log("not authenticated");
                 console.log("Error. Not authorized. Save to global state");
@@ -51,6 +54,9 @@ const SearchResult = (props) => {
     const handleAddBookClose = () => setAddBookShow(false);
     const handleAddBookShow = () => setAddBookShow(true);
 
+    const handleAddErrorClose = () => setAddErrorShow(false);
+    const handleAddErrorShow = () => setAddErrorShow(true);
+
     return (
         <>
             <BookCard>
@@ -69,6 +75,11 @@ const SearchResult = (props) => {
                 title={props.result.volumeInfo.title}
                 addBookShow={addBookShow}
                 handleAddBookClose={handleAddBookClose}
+            />
+            <AddErrorModal
+                title={props.result.volumeInfo.title}
+                addErrorShow={addErrorShow}
+                handleAddErrorClose={handleAddErrorClose}
             />
         </>
     );
