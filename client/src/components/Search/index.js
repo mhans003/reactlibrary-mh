@@ -71,7 +71,11 @@ const Search = () => {
                 <hr className="hr-light mb-5"/>
             </form>
             {message ? <Message message={message}/> : null}
-            {searchResults ? <SearchResults data={searchResults}/> : null}
+            {searchResults.length > 0 ? 
+                <>
+                    <SearchResults data={searchResults}/>
+                    <hr className="hr-light my-5"/>
+                </>: null}
         </Container>
     );
 }

@@ -41,7 +41,11 @@ const UserBooks = () => {
         <Container>  
             {message ? <Message message={message}/> : null}
             {
-                userBooks.length > 0 ? <UserBookList books={userBooks} retrieveBooks={retrieveBooks}/> : 
+                userBooks.length > 0 ? 
+                <>
+                    <UserBookList books={userBooks} retrieveBooks={retrieveBooks}/> 
+                    <hr className="hr-light my-5"/> 
+                </>: 
                 <h4 className="text-center font-light larger-spacing">NO BOOKS YET</h4>
             }
         </Container>
