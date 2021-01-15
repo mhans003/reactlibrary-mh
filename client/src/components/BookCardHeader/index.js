@@ -30,7 +30,7 @@ const BookCardHeader = (props) => {
                     : null
                 }
             </h3>
-            <h6 className="small-spacing">
+            <h4 className="small-spacing">
                 {props.authors ? props.authors.map((author, index) => {
                     return (
                         <span className="font-light" key={index}>
@@ -38,7 +38,7 @@ const BookCardHeader = (props) => {
                         </span>
                     )
                 }) : null}
-            </h6> 
+            </h4> 
             <ConfirmDeleteModal
                 title={props.title}
                 id={props.id}

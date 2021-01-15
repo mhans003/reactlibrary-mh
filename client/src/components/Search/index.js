@@ -62,7 +62,7 @@ const Search = () => {
         <Container>
             <form onSubmit={handleSubmit}>
                 <div className="input-group mb-5">
-                    <input type="text" name="search" onChange={onChange} className="form-control" minLength="1" required placeholder="Enter Search" ref={searchInput}/>
+                    <input type="text" name="search" onChange={onChange} className="form-control form-control-lg" minLength="1" required placeholder="Enter Search" ref={searchInput}/>
                     <div className="input-group-append">
                         <button className="btn btn-outline-info fas fa-search" type="submit">
                         </button>

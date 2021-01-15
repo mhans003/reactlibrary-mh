@@ -4,7 +4,7 @@ import Col from "../Col";
 
 const BookCardBody = (props) => {
     return (
-        <div className="card-body">
+        <div className="card-body slightly-larger">
             <ContainerFluid>
                 <Row>
                     <Col size={"col-md-3"}>
@@ -13,7 +13,7 @@ const BookCardBody = (props) => {
                         </div>
                     </Col>
                     <Col size={"col-md-9"}>
-                        <h6 className="small-spacing mt-3 mt-md-0">
+                        <h4 className="small-spacing mt-3 mt-md-0">
                             {props.categories ? props.categories.map((category, index) => {
                                 return (
                                     <span className="font-light" key={index}>
@@ -21,9 +21,14 @@ const BookCardBody = (props) => {
                                     </span>
                                 )
                             }) : null}
-                        </h6>
+                        </h4>
                         <p className="card-text font-light">
                             {props.description ? `${props.description.substring(0,500)}...` : ""}
+                        </p>
+                        <p>
+                            <a href={props.link ? `${props.link}` : ""} target="_blank" className="font-medium info-link">
+                                <i className="fal fa-long-arrow-right"></i> More Info
+                            </a>
                         </p>
                     </Col>
                 </Row>

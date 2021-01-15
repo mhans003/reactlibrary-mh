@@ -17,6 +17,7 @@ const Book = (props) => {
                 image={props.bookData.image}
                 categories={props.bookData.categories}
                 description={props.bookData.description}
+                link={props.bookData.link}
             />
         </BookCard>
     );

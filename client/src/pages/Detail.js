@@ -15,7 +15,7 @@ const Detail = (props) => {
             <LargeHeading text={"MY BOOKS"}/>
             <form className="my-5" onSubmit={handleSearchRedirect}>
                 <div className="text-center">
-                    <button className="btn btn-lg btn-outline-info font-medium small-spacing" type="submit">
+                    <button className="btn btn-lg button-xl btn-outline-info font-medium small-spacing" type="submit">
                         Search Books <i className="fad fa-search ml-1"></i>
                     </button>
                 </div>

@@ -20,6 +20,10 @@
     letter-spacing: 0.1rem;
 }
 
+.slightly-larger {
+    font-size: 120%;
+}
+
 .larger-text {
     font-size: 3.0rem;
 }
@@ -62,6 +66,10 @@
 
 .button-xl {
     font-size: 1.6rem;
+}
+
+.info-link {
+    color: rgba(50, 150, 180, 1.0);
 }
 
 /*Animations*/

@@ -70,6 +70,7 @@ const SearchResult = (props) => {
                     image={props.result.volumeInfo.imageLinks ? props.result.volumeInfo.imageLinks.thumbnail : null}
                     categories={props.result.volumeInfo.categories}
                     description={props.result.volumeInfo.description}
+                    link={props.result.volumeInfo.infoLink}
                 />
             </BookCard>
             <ConfirmAddModal

@@ -26,7 +26,7 @@ const ConfirmDeleteModal = (props) => {
                         <form className="form-group my-3" onSubmit={handleSubmit}>
                             <h3 className="font-light">Are you sure you want to delete this book from your list?</h3>
                             <hr/>
-                            <p><strong>{props.title}</strong></p>
+                            <h5 className="font-medium"><i><strong>{props.title}</strong></i></h5>
                             <button className="btn btn-outline-danger btn-lg btn-block mt-3 mb-3" type="submit" onClick={() => {
                                 props.handleDeleteBookClose();
                             }}>
