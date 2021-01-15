@@ -4,6 +4,10 @@
     background-image: linear-gradient(to right, rgba(100,100,100,0), rgba(100,100,100,0.75), rgba(100,100,100,0));
 }
 
+.blue-text {
+    color: rgba(50, 150, 180, 1.0);
+}
+
 .main-icon {
     color: rgba(50, 150, 180, 1.0);
 }
