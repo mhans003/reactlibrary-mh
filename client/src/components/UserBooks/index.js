@@ -3,8 +3,6 @@ import Container from "../Container";
 import Message from "../Message";
 import UserBookList from "../UserBookList";
 
-import { BookContext } from "../../Context/BookContext";
-
 //Include API functions.
 import APIService from "../../Services/APIService";
 
@@ -15,12 +13,9 @@ const UserBooks = () => {
     //Retrieve and save the books for this user.
     const [userBooks, setUserBooks] = useState([]);
 
-    //Include Global Book IDs
-    const bookContext = useContext(BookContext);
-
+    //Get all the user's books.
     const retrieveBooks = () => {
         APIService.getBooks().then(result => {
-            console.log(result.data.books);
             setUserBooks(result.data.books);
             console.log(userBooks);   
         })
@@ -33,6 +28,7 @@ const UserBooks = () => {
         });
     };
 
+    //Get the books when the page loads.
     useEffect(() => {
         retrieveBooks();
     }, []);

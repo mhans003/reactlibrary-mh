@@ -8,7 +8,7 @@ import Nav from "react-bootstrap/Nav";
 import NavItem from "../NavItem";
 import LogoutButton from "../LogoutButton"
 
-const Header = (props) => {
+const Header = props => {
     const { isAuthenticated, user } = useContext(AuthContext);
 
     //Render the navbar links when not logged in.

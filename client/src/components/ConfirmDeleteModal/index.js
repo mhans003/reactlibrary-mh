@@ -1,8 +1,8 @@
 import { Modal } from "react-bootstrap";
 import APIService from "../../Services/APIService";
 
-const ConfirmDeleteModal = (props) => {
-    //Handle submit here
+const ConfirmDeleteModal = props => {
+    //Handle submit here (delete from database).
     const handleSubmit = event => {
         event.preventDefault();
 
@@ -10,6 +10,9 @@ const ConfirmDeleteModal = (props) => {
             console.log(data);
             //After deleting book, retrieve books again.
             props.retrieveBooks();
+        })
+        .catch(error => {
+            
         });
     };
 

@@ -1,13 +1,11 @@
 import { useState, useContext, useRef } from "react";
+
 import Container from "../Container";
 import SearchResults from "../SearchResults";
 import Message from "../Message";
 
 //Include API functions 
 import APIService from "../../Services/APIService";
-
-//Include Global Book IDs
-import { BookContext } from "../../Context/BookContext";
 
 const Search = () => {
     //Keep track of books to search for.
@@ -22,10 +20,7 @@ const Search = () => {
     //Reference the input field.
     const searchInput = useRef();
 
-    //Include Global Book IDs
-    const bookContext = useContext(BookContext);
-    console.log(bookContext.bookIds);
-
+    //Handle submit for retrieving books from API.
     const handleSubmit = event => {
         event.preventDefault();
         console.log(searchTerms.text);
@@ -35,24 +30,26 @@ const Search = () => {
                 console.log(result.data.items);
                 setSearchResults(result.data.items);
                 console.log(searchResults);
-                //At end
+                //Reset the form.
                 resetForm();
             })
             .catch(error => {
                 console.log(error);
                 setMessage({
-                    msgBody: "Something went wrong",
+                    msgBody: "Something went wrong. Please try again.",
                     msgError: true
                 });
             });
     };
 
+    //Each time the form changes, update the text value of the search to be sent to the API.
     const onChange = event => {
         setSearchTerms({text: event.target.value});
         console.log(searchTerms);
     }
 
     const resetForm = () => {
+        //Clear fields.
         setSearchTerms({text: ""});
         searchInput.current.value = "";
         console.log(searchTerms);
@@ -62,7 +59,16 @@ const Search = () => {
         <Container>
             <form onSubmit={handleSubmit}>
                 <div className="input-group mb-5">
-                    <input type="text" name="search" onChange={onChange} className="form-control form-control-lg" minLength="1" required placeholder="Enter Search" ref={searchInput}/>
+                    <input 
+                        type="text" 
+                        name="search" 
+                        onChange={onChange} 
+                        className="form-control form-control-lg" 
+                        minLength="1" 
+                        required 
+                        placeholder="Enter Search" 
+                        ref={searchInput}
+                    />
                     <div className="input-group-append">
                         <button className="btn btn-outline-info fas fa-search" type="submit">
                         </button>
@@ -71,11 +77,13 @@ const Search = () => {
                 <hr className="hr-light mb-5"/>
             </form>
             {message ? <Message message={message}/> : null}
-            {searchResults.length > 0 ? 
-                <>
-                    <SearchResults data={searchResults}/>
-                    <hr className="hr-light my-5"/>
-                </>: null}
+            {
+                searchResults.length > 0 ? 
+                    <>
+                        <SearchResults data={searchResults}/>
+                        <hr className="hr-light my-5"/>
+                    </>: null
+            }
         </Container>
     );
 }

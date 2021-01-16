@@ -76,12 +76,28 @@
     color: rgba(50, 150, 180, 1.0);
 }
 
+.card-header, .modal-header {
+    background-color: rgba(50, 150, 180, 0.1);
+}
+
 /*Animations*/
 
 .fade-in-text {
     opacity: 1.0;
     animation: fadeIn ease 2.5s;
     -webkit-animation: fadeIn ease 2.5s;
+}
+
+.fade-in-text-slower {
+    opacity: 1.0;
+    animation: fadeIn ease 3.5s;
+    -webkit-animation: fadeIn ease 3.5s;
+}
+
+.fade-in-text-slowest {
+    opacity: 1.0;
+    animation: fadeIn ease 4.5s;
+    -webkit-animation: fadeIn ease 4.5s;
 }
     
 @keyframes fadeIn {

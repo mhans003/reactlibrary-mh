@@ -1,14 +1,17 @@
 import { createContext, useState, useEffect } from "react";
+
 import AuthService from "../Services/AuthService";
 
 //Export Provider and Consumer for global state.
 export const AuthContext = createContext();
 
 export default ({ children }) => {
+    //Create global state variables.
     const [user, setUser] = useState(null);
     const [isAuthenticated, setIsAuthenticated] = useState(false);
     const [isLoaded, setIsLoaded] = useState(false);
 
+    //When the application starts, see if the user is authenticated.
     useEffect(() => {
         AuthService.isAuthenticated().then(data => {
             //Once the user is authenticatd, set the global state authentication.

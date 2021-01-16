@@ -81,10 +81,28 @@ const Login = (props) => {
                 <h1 className="text-center my-4 font-light larger-spacing">Sign In</h1>
                 <hr className="my-4"/>
                 <div className="form-group">
-                    <input type="text" name="username" onChange={handleChange} className="form-control form-control-lg" placeholder="Username" aria-label="Enter Username" disabled={disabled} required/>
+                    <input 
+                        type="text" 
+                        name="username" 
+                        onChange={handleChange} 
+                        className="form-control form-control-lg" 
+                        placeholder="Username" 
+                        aria-label="Enter Username" 
+                        disabled={disabled} 
+                        required
+                    />
                 </div>
                 <div className="form-group">
-                    <input type="password" name="password" onChange={handleChange} className="form-control form-control-lg" placeholder="Password" aria-label="Enter Password" disabled={disabled} required/>
+                    <input 
+                        type="password" 
+                        name="password" 
+                        onChange={handleChange} 
+                        className="form-control form-control-lg" 
+                        placeholder="Password" 
+                        aria-label="Enter Password" 
+                        disabled={disabled} 
+                        required
+                    />
                 </div>
                 <button className="btn btn-lg btn-primary btn-block font-medium" type="submit" disabled={disabled}>
                     Log In <i className="fad fa-sign-in-alt ml-1"></i>

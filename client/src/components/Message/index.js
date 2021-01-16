@@ -1,4 +1,4 @@
-const Message = (props) => {
+const Message = props => {
 
     const getStyle = (props) => {
         //Create a base "alert" class for this alert.

@@ -35,19 +35,8 @@ const SearchResult = (props) => {
             console.log(error);
             if(error) {
                 handleAddErrorShow();
-                console.log("not authenticated");
-                console.log("Error. Not authorized. Save to global state");
+                console.log("Not Authenticated");
             }
-        });
-    };
-
-    const handleFavoriteRemove = event => {
-        APIService.deleteBook(props.result.id).then(data => {
-            //After boks are deleted, makes sure that global state is update to reflect updates.
-        })
-        .catch(error => {
-            //Deal with error and create message object below.
-            console.log(error);
         });
     };
 

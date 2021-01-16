@@ -1,6 +1,5 @@
 import { useState, useRef, useEffect } from "react";
 import AuthService from "../Services/AuthService";
-import { AuthContext } from "../Context/AuthContext";
 
 //Import Components
 import Container from "../components/Container";
@@ -35,18 +34,6 @@ const Register = (props) => {
         );
     }
 
-    /*
-    const resetForm = () => {
-        setUser(
-            {
-                email: "",
-                username: "", 
-                password: "", 
-            }
-        );
-    }
-    */
-
     //Handle when the form is submitted.
     const handleSubmit = (event) => {
         event.preventDefault();
@@ -55,8 +42,6 @@ const Register = (props) => {
             //After registering, get the message returned back.
             const { message } = data;
             setMessage(message);
-            //Reset the form.
-            //resetForm();
             //As long as there is no error, set the timer for 2 seconds to redirect to login page after registering.
             if(!message.msgError) {
                 setDisabled(true);

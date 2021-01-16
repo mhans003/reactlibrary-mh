@@ -2,7 +2,7 @@ import ContainerFluid from "../ContainerFluid";
 import Row from "../Row";
 import Col from "../Col";
 
-const BookCardBody = (props) => {
+const BookCardBody = props => {
     return (
         <div className="card-body slightly-larger">
             <ContainerFluid>
@@ -14,16 +14,22 @@ const BookCardBody = (props) => {
                     </Col>
                     <Col size={"col-md-9"}>
                         <h4 className="small-spacing mt-3 mt-md-0">
-                            {props.categories ? props.categories.map((category, index) => {
-                                return (
-                                    <span className="font-light" key={index}>
-                                        <i>{category}{index === props.categories.length - 1 ? "" : ", "}</i>
-                                    </span>
-                                )
-                            }) : null}
+                            {
+                                props.categories ? props.categories.map((category, index) => {
+                                    return (
+                                        <span className="font-medium" key={index}>
+                                            <i>
+                                                {category}{index === props.categories.length - 1 ? "" : ", "}
+                                            </i>
+                                        </span>
+                                    )
+                                }) : null
+                            }
                         </h4>
-                        <p className="card-text font-light">
-                            {props.description ? `${props.description.substring(0,500)}...` : ""}
+                        <p className="card-text font-medium">
+                            {
+                                props.description ? `${props.description.substring(0,500)}...` : ""
+                            }
                         </p>
                         <p>
                             <a href={props.link ? `${props.link}` : ""} target="_blank" className="font-medium info-link">

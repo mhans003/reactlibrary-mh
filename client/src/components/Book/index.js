@@ -2,7 +2,8 @@ import BookCard from "../BookCard";
 import BookCardBody from "../BookCardBody";
 import BookCardHeader from "../BookCardHeader";
 
-const Book = (props) => {
+const Book = props => {
+    //This component displays a Book Card with information passed in via props.
     console.log(props);
     return (
         <BookCard>

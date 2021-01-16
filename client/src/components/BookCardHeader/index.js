@@ -1,7 +1,7 @@
 import ConfirmDeleteModal from "../ConfirmDeleteModal";
 import { useState } from "react";
 
-const BookCardHeader = (props) => {
+const BookCardHeader = props => {
     //Set state for delete modal.
     const [deleteBookShow, setDeleteBookShow] = useState(false);
 
@@ -11,7 +11,7 @@ const BookCardHeader = (props) => {
 
     return (
         <div className="card-header">
-            <h3 className="small-spacing font-light">
+            <h3 className="small-spacing font-medium">
                 {props.title}
                 {
                     props.handleSave ? 

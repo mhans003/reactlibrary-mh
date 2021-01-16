@@ -2,6 +2,8 @@ import { useContext } from "react";
 import { Route, Redirect } from "react-router-dom";
 import { AuthContext } from "../Context/AuthContext";
 
+//This higher-order component protects routes where authentication is required.
+
 const PrivateRoute = ({component: Component, roles, ...rest}) => {
     const { isAuthenticated, user } = useContext(AuthContext);
     return(
