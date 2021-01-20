@@ -29,7 +29,7 @@ const Register = (props) => {
         setUser(
             {
                 ...user, 
-                [event.target.name] : event.target.value
+                [event.target.name] : event.target.value.trim()
             }
         );
     }

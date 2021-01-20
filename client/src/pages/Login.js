@@ -32,7 +32,7 @@ const Login = (props) => {
         setUser(
             {
                 ...user, 
-                [event.target.name] : event.target.value
+                [event.target.name] : event.target.value.trim()
             }
         );
         console.log(user);

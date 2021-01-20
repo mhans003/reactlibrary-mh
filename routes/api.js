@@ -56,6 +56,7 @@ apiRouter.get("/books", passport.authenticate("jwt", {session: false}), (request
 
 apiRouter.post("/books", passport.authenticate("jwt", {session: false}), (request, response) => {
     console.log(request.body);
+    console.log("CURRENT USER ------");
     console.log(request.user);
     
     const book = new Book({...request.body});
