@@ -1,8 +1,10 @@
-/*Navbar*/
-
 .nav-link {
     font-size: 125%;
     color: rgba(50, 150, 180, 1.0) !important;
+}
+
+.bg-grey {
+    background-color: #f8f9fa;
 }
 
 .hr-light {

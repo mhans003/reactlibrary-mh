@@ -64,20 +64,21 @@ const Home = (props) => {
                 </button>
             </form>
             {message ? <Message message={message}/> : null}
-            <hr className="hr-light my-5"/>
-            <div className="text-center my-5">
-                <h2 className="font-light text-center fade-in-text mb-3">Returning Users</h2>
-                <Link to={"login"}>
-                    <button className="btn-lg btn-primary font-medium medium-spacing">Sign In</button>
-                </Link>
+         
+            <div className="bg-grey py-4 my-5">
+                <div className="text-center my-5">
+                    <h2 className="font-light text-center fade-in-text mb-3">Returning Users</h2>
+                    <Link to={"login"}>
+                        <button className="btn-lg button-xl btn-primary font-medium medium-spacing">Sign In</button>
+                    </Link>
+                </div>
+                <div className="text-center mb-5">
+                    <h2 className="font-light text-center fade-in-text mb-3">Create Account</h2>
+                    <Link to={"register"}>
+                        <button className="btn-lg button-xl btn-primary font-medium medium-spacing">Register</button>
+                    </Link>
+                </div>
             </div>
-            <div className="text-center mb-5">
-                <h2 className="font-light text-center fade-in-text mb-3">Create Account</h2>
-                <Link to={"register"}>
-                    <button className="btn-lg btn-primary font-medium medium-spacing">Register</button>
-                </Link>
-            </div>
-            <hr className="mb-5"/>
         </>
     );
 };
