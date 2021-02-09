@@ -87,7 +87,7 @@ const Login = (props) => {
                         type="text" 
                         name="username" 
                         onChange={handleChange} 
-                        className="form-control form-control-lg" 
+                        className="form-control form-control-lg form-xl" 
                         placeholder="Username" 
                         aria-label="Enter Username" 
                         disabled={disabled} 
@@ -99,19 +99,19 @@ const Login = (props) => {
                         type="password" 
                         name="password" 
                         onChange={handleChange} 
-                        className="form-control form-control-lg" 
+                        className="form-control form-control-lg form-xl" 
                         placeholder="Password" 
                         aria-label="Enter Password" 
                         disabled={disabled} 
                         required
                     />
                 </div>
-                <button className="btn btn-lg btn-primary btn-block font-medium" type="submit" disabled={disabled}>
+                <button className="btn btn-lg button-xl btn-primary btn-block font-medium" type="submit" disabled={disabled}>
                     Log In <i className="fad fa-sign-in-alt ml-1"></i>
                 </button>
             </form>
-            <form className="mt-2" onSubmit={handleSignInredirect}>
-                <button className="btn btn-lg btn-outline-info btn-block font-medium small-spacing" type="submit" disabled={disabled}>
+            <form className="mt-2 mb-5" onSubmit={handleSignInredirect}>
+                <button className="btn btn-lg button-xl btn-outline-info btn-block font-medium small-spacing" type="submit" disabled={disabled}>
                     Create New Account
                 </button>
             </form>

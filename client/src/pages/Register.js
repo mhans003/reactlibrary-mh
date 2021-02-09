@@ -65,20 +65,20 @@ const Register = (props) => {
                 <h1 className="text-center my-4 font-light larger-spacing">Register</h1>
                 <hr className="my-4"/>
                 <div className="form-group">
-                    <input type="email" name="email" onChange={handleChange} className="form-control form-control-lg" placeholder="Email" aria-label="Enter Email" disabled={disabled} required/>
+                    <input type="email" name="email" onChange={handleChange} className="form-control form-control-lg form-xl" placeholder="Email" aria-label="Enter Email" disabled={disabled} required/>
                 </div>
                 <div className="form-group">
-                    <input type="text" name="username" onChange={handleChange} className="form-control form-control-lg" placeholder="Username" aria-label="Enter Username" disabled={disabled} minLength="4" required/>
+                    <input type="text" name="username" onChange={handleChange} className="form-control form-control-lg form-xl" placeholder="Username" aria-label="Enter Username" disabled={disabled} minLength="4" required/>
                 </div>
                 <div className="form-group">
-                    <input type="password" name="password" onChange={handleChange} className="form-control form-control-lg" placeholder="Password" aria-label="Enter Password" disabled={disabled} minLength="4" required/>
+                    <input type="password" name="password" onChange={handleChange} className="form-control form-control-lg form-xl" placeholder="Password" aria-label="Enter Password" disabled={disabled} minLength="4" required/>
                 </div>
-                <button className="btn btn-lg btn-primary btn-block font-medium" type="submit" disabled={disabled}>
+                <button className="btn btn-lg btn-primary button-xl btn-block font-medium" type="submit" disabled={disabled}>
                     Sign Up <i className="fad fa-user-plus ml-1"></i>
                 </button>
             </form>
-            <form className="mt-2" onSubmit={handleLogInredirect}>
-                <button className="btn btn-lg btn-outline-info btn-block font-medium small-spacing" type="submit" disabled={disabled}>
+            <form className="mt-2 mb-5" onSubmit={handleLogInredirect}>
+                <button className="btn btn-lg button-xl btn-outline-info btn-block font-medium small-spacing" type="submit" disabled={disabled}>
                     Log Into Existing Account
                 </button>
             </form>
