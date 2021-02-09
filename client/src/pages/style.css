@@ -1,3 +1,10 @@
+/*Navbar*/
+
+.nav-link {
+    font-size: 125%;
+    color: rgba(50, 150, 180, 1.0) !important;
+}
+
 .hr-light {
     border: 0;
     height: 1px;
@@ -127,7 +134,7 @@
 
 /*Media Queries*/
 
-@media screen and (max-width: 623px) {
+@media screen and (max-width: 630px) {
 
     .navbar-brand {
         margin-left: auto !important; 
@@ -145,13 +152,19 @@
 
 }
 
-@media screen and (max-width: 410px) {
+@media screen and (max-width: 515px) {
     .navbar-brand span {
-        font-size: 1.5rem !important;
+        font-size: 2.0rem !important;
     }
 }
 
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 410px) {
+    .navbar-brand span {
+        font-size: 1.65rem !important;
+    }
+}
+
+@media screen and (max-width: 350px) {
     .navbar-brand span {
         font-size: 1.1rem !important;
     }

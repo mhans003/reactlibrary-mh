@@ -32,7 +32,7 @@ const Header = props => {
     };
 
     return (
-        <Navbar className="navbar-light bg-light p-5" expand="md">
+        <Navbar className="navbar-light bg-light p-5" expand="lg">
             <Navbar.Brand href="/"><span className="larger-spacing larger-text font-light"><span className="blue-text font-medium">REACT</span> LIBRARY<i className="fad fa-books main-icon"></i></span></Navbar.Brand>
             <Navbar.Toggle aria-controls="basic-navbar-nav"/>
             <Navbar.Collapse id="basic-navbar-nav">

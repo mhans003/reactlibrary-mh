@@ -57,6 +57,8 @@ const Login = (props) => {
 
                 setDisabled(true);
 
+                console.log(authContext.user);
+
                 timerID = setTimeout(() => {
                     props.history.push("/user");
                 }, 2000);
