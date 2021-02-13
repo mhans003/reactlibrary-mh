@@ -92,6 +92,12 @@
     color: #fff;
 }
 
+.btn-info:hover {
+    color: rgba(50, 150, 180, 1.0);
+    border: 1px solid rgba(50, 150, 180, 1.0);
+    background-color: #fff;
+}
+
 .button-xl {
     font-size: 1.6rem;
 }
