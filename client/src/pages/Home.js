@@ -57,15 +57,19 @@ const Home = (props) => {
     return (
         <>
             <Header/>
-            <h1 className="font-light text-center my-5 mx-1 fade-in-text">Search and save books of interest</h1>
-            <form className="mt-5 text-center" onSubmit={handleGuestLogin}>
-                <button className="btn btn-lg button-xl btn-outline-info font-medium small-spacing" type="submit" disabled={disabled}>
-                    Continue as Guest
-                </button>
-            </form>
-            {message ? <Message message={message}/> : null}
+            <div className="landing-wrapper">
+                <div className="dark-overlay py-3">
+                    <h1 className="font-light text-center pt-5 mx-1 fade-in-text">Search and save books of interest</h1>
+                    <form className="mt-5 text-center" onSubmit={handleGuestLogin}>
+                        <button className="btn btn-lg button-xl btn-outline-info font-medium small-spacing my-5" type="submit" disabled={disabled}>
+                            Continue as Guest
+                        </button>
+                    </form>
+                    {message ? <Message message={message}/> : null}
+                </div>
+            </div>
          
-            <div className="bg-grey py-4 my-5">
+            <div className="bg-grey py-4 mb-5">
                 <div className="text-center my-5">
                     <h2 className="font-light text-center fade-in-text mb-3">Returning Users</h2>
                     <Link to={"login"}>
