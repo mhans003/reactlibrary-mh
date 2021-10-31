@@ -12,7 +12,9 @@
     "seed": "node scripts/seed.js",
     "install": "cd client && npm install",
     "build": "cd client && npm run build",
-    "heroku-postbuild": "npm run build"
+    "heroku-postbuild": "npm run build",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "author": "",
   "license": "ISC",
@@ -33,5 +35,6 @@
     "passport-jwt": "^4.0.0",
     "passport-local": "^1.0.0",
     "react-router-dom": "^5.2.0"
-  }
+  },
+  "homepage": "https://mhans003.github.io/codesignal-projects-react-showcase"
 }
